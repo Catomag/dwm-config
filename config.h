@@ -1,13 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int gappx     = 8;        /* gaps between windows */
 static const unsigned int snap      = 12;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=16", "JoyPixels:pixelsize=16:antialias=true:autohint=true" };
-static const char dmenufont[]       = "monospace:size=16";
+static const char *fonts[]          = { "Hack-Bold:size=16:antialias=true", 
+										"JoyPixels:pixelsize=16:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Hack-Bold:size=16:antialias=true";
 
 static const char col_white[]       = "#ffffff";
 static const char col_black[]       = "#000000";
@@ -16,12 +17,12 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#59190b";
+static const char col_cyan[]        = "#70d877";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_black, col_white,  col_white  },
+	[SchemeSel]  = { col_black, col_cyan,  col_cyan  },
 };
 
 /* tagging */
@@ -63,7 +64,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_black, NULL };
 static const char *termcmd[]  = { "termite", NULL };
 
 static Key keys[] = {
